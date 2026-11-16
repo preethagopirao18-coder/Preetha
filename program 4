@@ -1,0 +1,36 @@
+import heapq
+
+def best_first(graph, h, start, goal):
+    pq = [(h[start], start, [start])]
+    visited = set()
+
+    while pq:
+        _, node, path = heapq.heappop(pq)
+
+        if node == goal:
+            return path
+
+        if node not in visited:
+            visited.add(node)
+
+            for neighbour in graph[node]:
+                if neighbour not in visited:
+                    heapq.heappush(
+                        pq,
+                        (h[neighbour], neighbour,
+                         path + [neighbour])
+                    )
+
+graph = {
+    'A': ['B', 'C'],
+    'B': ['D', 'E'],
+    'C': ['F'],
+    'D': [],
+    'E': ['F'],
+    'F': []
+}
+
+h = {'A': 6, 'B': 4, 'C': 2,
+     'D': 3, 'E': 1, 'F': 0}
+
+print("Best Path:", best_first(graph, h, 'A', 'F'))
