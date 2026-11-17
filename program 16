@@ -1,0 +1,23 @@
+birds = {
+    'Parrot': True,
+    'Eagle': True,
+    'Penguin': False,
+    'Sparrow': True,
+    'Ostrich': False
+}
+
+def can_fly(bird):
+    if bird in birds:
+        return birds[bird]
+    return None
+
+bird = input("Enter bird name: ").capitalize()
+
+result = can_fly(bird)
+
+if result is True:
+    print(bird, "can fly")
+elif result is False:
+    print(bird, "cannot fly")
+else:
+    print("Bird not found")
