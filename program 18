@@ -1,0 +1,13 @@
+def classify(color):
+    rules = {
+        "yellow": "Banana",
+        "red": "Apple",
+        "orange": "Orange",
+        "green": "Guava"
+    }
+
+    return rules.get(color.lower(), "Unknown Fruit")
+
+color = input("Enter fruit color: ")
+
+print("Fruit:", classify(color))
