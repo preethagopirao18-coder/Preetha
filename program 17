@@ -1,0 +1,17 @@
+fever = input("Do you have fever? ").lower()
+cough = input("Do you have cough? ").lower()
+sore_throat = input("Do you have sore throat? ").lower()
+
+if fever == "yes" and cough == "yes":
+    print("Possible condition: Flu-like illness")
+
+elif cough == "yes" and sore_throat == "yes":
+    print("Possible condition: Respiratory infection")
+
+elif fever == "yes":
+    print("Possible condition: Fever-related illness")
+
+else:
+    print("No matching condition found")
+
+print("Consult a healthcare professional for diagnosis.")
