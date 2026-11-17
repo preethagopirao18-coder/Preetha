@@ -1,0 +1,25 @@
+facts = {"fever", "cough"}
+
+rules = [
+    ({"fever", "cough"}, "flu"),
+    ({"flu"}, "take_rest"),
+    ({"cough"}, "respiratory_symptom")
+]
+
+def forward_chaining(facts, rules):
+    while True:
+        new_fact = False
+
+        for condition, conclusion in rules:
+            if condition.issubset(facts):
+                if conclusion not in facts:
+                    facts.add(conclusion)
+                    print("New Fact:", conclusion)
+                    new_fact = True
+
+        if not new_fact:
+            break
+
+forward_chaining(facts, rules)
+
+print("Final Facts:", facts)
