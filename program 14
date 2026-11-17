@@ -1,0 +1,16 @@
+age = int(input("Enter age: "))
+bmi = float(input("Enter BMI: "))
+health = input("Enter health condition: ").lower()
+
+print("Diet Recommendation:")
+
+if health == "diabetes":
+    print("Choose balanced meals with less added sugar.")
+elif health == "hypertension":
+    print("Choose low-sodium foods.")
+elif bmi < 18.5:
+    print("Choose balanced, nutritious meals.")
+elif bmi < 25:
+    print("Maintain a balanced diet.")
+else:
+    print("Choose balanced meals with fruits and vegetables.")
