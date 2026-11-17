@@ -1,0 +1,12 @@
+dob = {
+    "John": "12-05-2005",
+    "Alice": "15-08-2004",
+    "David": "20-10-2003"
+}
+
+name = input("Enter person name: ").capitalize()
+
+if name in dob:
+    print("Date of Birth:", dob[name])
+else:
+    print("Person not found")
