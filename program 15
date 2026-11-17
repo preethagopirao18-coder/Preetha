@@ -1,0 +1,20 @@
+parents = {
+    'John': ['Alice', 'Bob'],
+    'Mary': ['Alice', 'Bob'],
+    'Alice': ['David']
+}
+
+def parent(p, c):
+    return c in parents.get(p, [])
+
+def grandparent(g, c):
+    for child in parents.get(g, []):
+        if parent(child, c):
+            return True
+    return False
+
+print("Is John parent of Alice?",
+      parent('John', 'Alice'))
+
+print("Is John grandparent of David?",
+      grandparent('John', 'David'))
