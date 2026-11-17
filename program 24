@@ -1,0 +1,25 @@
+rules = {
+    "flu": ["fever", "cough"],
+    "cold": ["sneezing", "cough"]
+}
+
+facts = ["fever", "cough"]
+
+def backward_chaining(goal):
+    if goal in facts:
+        return True
+
+    if goal in rules:
+        return all(
+            backward_chaining(x)
+            for x in rules[goal]
+        )
+
+    return False
+
+goal = "flu"
+
+if backward_chaining(goal):
+    print("Goal Proved:", goal)
+else:
+    print("Goal Not Proved")
