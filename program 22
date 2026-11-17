@@ -1,0 +1,24 @@
+monkey = "Floor"
+box = "Corner"
+banana = "Ceiling"
+
+print("Initial State:")
+print("Monkey:", monkey)
+print("Box:", box)
+print("Banana:", banana)
+
+print("\nActions:")
+
+print("1. Monkey moves to the box")
+monkey = "Corner"
+
+print("2. Monkey pushes the box")
+box = "Under Banana"
+monkey = "Under Banana"
+
+print("3. Monkey climbs the box")
+monkey = "On Box"
+
+print("4. Monkey grabs the banana")
+
+print("\nGoal Achieved: Monkey gets the banana!")
