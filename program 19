@@ -1,0 +1,17 @@
+planets = {
+    "Mercury": "Closest planet to the Sun",
+    "Venus": "Hottest planet",
+    "Earth": "Planet with life",
+    "Mars": "Red planet",
+    "Jupiter": "Largest planet",
+    "Saturn": "Planet with prominent rings",
+    "Uranus": "Ice giant",
+    "Neptune": "Farthest planet from the Sun"
+}
+
+name = input("Enter planet name: ").capitalize()
+
+if name in planets:
+    print(planets[name])
+else:
+    print("Planet not found")
