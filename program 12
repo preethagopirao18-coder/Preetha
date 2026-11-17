@@ -1,0 +1,18 @@
+from sklearn.tree import DecisionTreeClassifier
+
+X = [
+    [25, 50000],
+    [30, 60000],
+    [35, 80000],
+    [20, 20000],
+    [40, 90000]
+]
+
+y = ['No', 'Yes', 'Yes', 'No', 'Yes']
+
+model = DecisionTreeClassifier()
+model.fit(X, y)
+
+prediction = model.predict([[32, 70000]])
+
+print("Prediction:", prediction[0])
